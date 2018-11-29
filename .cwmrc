@@ -8,7 +8,7 @@ ignore "lemonbar"
 
 #unbind-key CM-Return
 #bind-key CM-Return "xterm -e tmux"
-bind-key 4-Return "xterm -e tmux -2"
+bind-key 4-Return "xterm -e tmux -u"
 bind-key 4-w "xterm -e doas sh /etc/netstart"
 bind-key 4-f firefox
 bind-key 4-v "/usr/local/bin/tabbed -c vimb -e"
