@@ -4,6 +4,6 @@ XTerm*loginShell:true
 XTerm*Background: black
 XTerm*Foreground: white
 XTerm*faceName: terminus
-XTerm*faceSize: 10  
+XTerm*faceSize: 8 
 XTerm*ScrollBar: false
 XTerm*selectToClipboard: true
