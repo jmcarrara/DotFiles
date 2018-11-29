@@ -1,0 +1,24 @@
+fontname "terminus:pixelsize=16:bold"
+
+borderwidth 0
+
+gap 16 0 0 0
+
+ignore "lemonbar"
+
+#unbind-key CM-Return
+#bind-key CM-Return "xterm -e tmux"
+bind-key 4-Return "xterm -e tmux -2"
+bind-key 4-w "xterm -e doas sh /etc/netstart"
+bind-key 4-f firefox
+bind-key 4-v "/usr/local/bin/tabbed -c vimb -e"
+bind-key 4-equal "mixerctl outputs.master=+5"
+bind-key 4-minus "mixerctl outputs.master=-5"
+bind-key 4-p dmenu_run 
+bind-key 4-q "xterm -e doas shutdown -p now"
+
+command Jogos-OpenSonic opensonic
+command Jogos-Emuladores-Nes fceux
+command Jogos-Emuladores-Snes snes9x-gtk
+command Jogos-Xadez-XBoard xboard
+command Navegadores-FireFox firefox
