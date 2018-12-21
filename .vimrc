@@ -79,6 +79,7 @@ Plug 'davidhalter/jedi-vim', { 'do': 'pip install jedi' }
 "Plug 'masawada/completor-dictionary'
 Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 "*****************************************************************************
 
