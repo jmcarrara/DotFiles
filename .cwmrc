@@ -20,5 +20,6 @@ bind-key 4-q "xterm -e doas shutdown -p now"
 command Jogos-OpenSonic opensonic
 command Jogos-Emuladores-Nes fceux
 command Jogos-Emuladores-Snes snes9x-gtk
+command Jogos-Emuladores-PC scummvm
 command Jogos-Xadez-XBoard xboard
 command Navegadores-FireFox firefox
