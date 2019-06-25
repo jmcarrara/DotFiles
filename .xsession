@@ -1,6 +1,6 @@
-exec feh --bg-fill /home/jmc/Images/openbsd-wallpaper-1920x1080.jpg &
-     setxkbmap br &
-     i3status | lemonbar -n lemonbar &
-     xidle -timeout 300 -program "/usr/X11R6/bin/xlock" &
-	#sh /home/jmc/./.battcheck.sh &
-     cwm
+exec setxkbmap br &
+xidle -timeout 300 -program "/usr/X11R6/bin/xlock" &
+sh /home/jmc/battcheck.sh &
+sh /home/jmc/monitor.sh &
+i3status | lemonbar -n lemonbar &
+cwm
