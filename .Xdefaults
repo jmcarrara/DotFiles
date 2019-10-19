@@ -1,9 +1,25 @@
 ! $OpenBSD: dot.Xdefaults,v 1.3 2014/07/10 10:22:59 jasper Exp $
 XTerm*loginShell:true
-
 XTerm*Background: black
 XTerm*Foreground: white
 XTerm*faceName: terminus
 XTerm*faceSize: 8 
 XTerm*ScrollBar: false
 XTerm*selectToClipboard: true
+
+xterm*VT100.Translations: #override \
+Ctrl <Key> minus: smaller-vt-font() \n\
+Ctrl <Key> plus: larger-vt-font() \n\
+Ctrl <Key> 1: set-vt-font(d)
+
+! VT Font Menu: Unreadable
+xterm*faceSize1: 8
+! ! VT font menu: Tiny
+xterm*faceSize2: 10
+! ! VT font menu: Medium
+xterm*faceSize3: 12
+! ! VT font menu: Large
+xterm*faceSize4: 16
+! ! VT font menu: Huge
+xterm*faceSize5: 22
+

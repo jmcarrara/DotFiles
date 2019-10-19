@@ -15,7 +15,8 @@ syntax on "habilita processamento de sintaxe.
 set ruler "Mostra linhas e colunas.
 set tabstop=4 "Número de espacos por TAB.
 set softtabstop=4 "Número de espacos por TAB quando editando.
-set expandtab "Transforma TABs em espacos.
+set shiftwidth=4 "Numero de espaços quando da enter.
+set noexpandtab " Não transforma TABs em espacos.
 set number "Mostra o numero de linhas.
 set showcmd "Mostra barra de comandos.
 "filetype indent on "habilita identificação e identação por extensão de arquivo
@@ -37,13 +38,15 @@ set noshowmode "tira o indidador de modo padrão do vim
 set laststatus=2
 set colorcolumn=79
 "let python_highlight_all=1
+set backspace=indent,eol,start
 
 "Remaps
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 nnoremap <S-T> :tabnew <CR>
 "nnoremap <F9> :w !clear; python3 % <CR>
-nnoremap <F9> :GoRun <CR>
+"nnoremap <F9> :GoRun <CR>
+nnoremap <F5> :w !clear; :!cc % <CR>
 
 "Limpar o highlight após uma busca com o /
 autocmd InsertEnter * :let @/=""
@@ -55,6 +58,7 @@ autocmd InsertEnter * :let @/=""
 call plug#begin()
 "Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 "Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ./install.py --go-completer' }
+"Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer' }
 "Plug 'townk/vim-autoclose'
 "Plug 'alvan/vim-closetag'
 Plug 'itchyny/lightline.vim'
@@ -66,10 +70,10 @@ Plug 'flazz/vim-colorschemes'
 "Plug 'davidhalter/jedi-vim', { 'do': 'pip install jedi' }
 "Plug 'maralla/completor.vim', { 'do': 'pip install jedi' }
 "Plug 'masawada/completor-dictionary'
-"Plug 'vim-syntastic/syntastic'
+Plug 'vim-syntastic/syntastic'
 "plug 'nvie/vim-flake8'
 Plug 'christoomey/vim-tmux-navigator'
-"Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'
 "Plug 'rkulla/pydiction'
 "Plug 'tweekmonster/django-plus.vim'
 call plug#end()
@@ -105,15 +109,18 @@ colorscheme molokai
 "autocmd FileType * execute 'setlocal dictionary='.expand($HOME.'/.vim/dict/'.&filetype.'.dict')
 
 ""syntastic configuration
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 1 
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1 
 
+let g:syntastic_c_compiler ='clang'
+"let g:syntastic_c_compiler =['gcc', 'clang','make']
+"let g:syntastic_c_compiler_options ='-Wpedantic -g'
 
 "Configurações do vim-closetag
 "let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
@@ -129,7 +136,7 @@ nmap <F8> :TagbarToggle<CR>
 
 "
 "Emmet configuration
-"let g:user_emmet_leader_key=','
+let g:user_emmet_leader_key=','
 
 "
 "Configuração YouCompleteMe

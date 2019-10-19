@@ -9,7 +9,7 @@ do
 	fi
 
 	if [ $battlvl -lt 6 ] && [ `apm -a` = 0 ]; then
-			xlock
+			#xlock
 			ZZZ
 	fi
 	sleep 20 
